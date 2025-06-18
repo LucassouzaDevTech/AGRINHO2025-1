@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site sobre São Jerônimo da Serra, Paraná, celebrando o tema Agrinho 2025: Festejando a conexão campo-cidade, com foco em sustentabilidade, empreendedorismo e inovação.">
+    <title>São Jerônimo da Serra - Conexão Campo-Cidade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        /* Fontes */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+        /* Reset e Variáveis */
+        :root {
+            --primary: #2E7D32;
+            --primary-light: #4CAF50;
+            --primary-dark: #1B5E20;
+            --secondary: #FFA000;
+            --dark: #333333;
+            --light: #F5F5F5;
+            --white: #FFFFFF;
+            --gray: #757575;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--white);
+        }
+
+        /* Cabeçalho e Navegação */
+        header {
+            position: relative;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            padding: 10px 40px;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            left: 0;
+            bottom: -4px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-dark);
+            margin: 5px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            padding: 0 20px;
+            margin-bottom: 0;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: var(--transition);
+            animation: fadeIn 1.5s ease 1s both;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            font-size: 2rem;
+            color: var(--white);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        /* Content Sections */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .text {
+            flex: 1;
+        }
+
+        .text p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .text a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .text a i {
+            margin-left: 5px;
+            font-size: 0.9em;
+        }
+
+        .text a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .image {
+            flex: 1;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Characteristics */
+        .characteristics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .char-item {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .char-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .char-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .char-item h3 {
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 15px;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-light);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--white);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -14px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -14px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        /* Contact & Map */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+
+        .contact-text h3 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .contact-text p {
+            color: var(--gray);
+        }
+
+        .map {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-social {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 99;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 992px) {
+            .section {
+                padding: 80px 0;
+            }
+
+            .content {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .content.reverse {
+                flex-direction: column-reverse;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-item {
+                height: 200px;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding: 10px 10px 10px 70px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 17px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 80px;
+                background-color: var(--white);
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.5s ease;
+                z-index: 998;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-links li {
+                margin: 0;
+                padding: 15px;
+                width: 100%;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            .burger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item {
+                height: 250px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation styles */
+        [data-aos] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        [data-aos].aos-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="logo">
+                <img src="BRASAO.png"Brasão de São Jerônimo da Serra">
+                <h1>São Jerônimo da Serra</h1>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#history">História</a></li>
+                <li><a href="#school">Colégio João XXIII</a></li>
+                <li><a href="#attractions">Atrações</a></li>
+                <li><a href="#agrinho">Agrinho 2025</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="burger" id="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <section id="home" class="hero">
+            <h1>Festejando a Conexão Campo-Cidade</h1>
+            <p>Descubra São Jerônimo da Serra, um município que une sustentabilidade, inovação e a rica interação entre o rural e o urbano.</p>
+            <a href="#about" class="cta-button">Explorar</a>
+            <div class="scroll-down" id="scrollDown">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Sobre São Jerônimo da Serra</h2>
+                    <p>Conheça as riquezas naturais e culturais do nosso município</p>
+                </div>
+                <div class="content" data-aos="fade-up">
+                    <div class="text">
+                        <p>São Jerônimo da Serra, localizado na região Norte do Paraná, é um município com uma história rica, fundada em 1854 e emancipada em 26 de dezembro de 1943. Com uma população de aproximadamente 10.830 habitantes (IBGE 2022) e uma densidade de 13,15 hab/km², o município se estende por uma área de 823,7 km².</p>
+                        <p>A cidade se destaca por sua terra fértil, clima ameno com temperatura média anual de 20°C, belezas naturais e localização estratégica, a cerca de 90 km de Londrina, próxima ao Rio Tibagi e à Serra do Mar, a uma altitude de 900 metros.</p>
+                        <p>A economia local é baseada principalmente na agricultura, com cultivo de soja, milho, trigo e café, e na pecuária. O município também é conhecido pela produção de café de qualidade e pelo Grupo Paraná Wood, além de um crescente potencial turístico que vem sendo desenvolvido.</p>
+                        <a href="https://saojeronimodaserra.pr.gov.br/" target="_blank" rel="noopener">Visite o site oficial da cidade <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="image">
+                        <img src="saojeronimo.jpg" alt="Vista panorâmica de São Jerônimo da Serra, mostrando a cidade entre montanhas e áreas verdes">
+                    </div>
+                </div>
+
+                <div class="characteristics">
+                    <div class="char-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="char-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3>Natureza Exuberante</h3>
+                        <p>Cercada por montanhas, cachoeiras e o Rio Tibagi, proporcionando paisagens de tirar o fôlego.</p>
+                    </div>
+                    <div class="char-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="char-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Agricultura Sustentável</h3>
+                        <p>Produção agrícola diversificada com práticas que respeitam o meio ambiente e valorizam o produtor rural.</p>
+                    </div>
+                    <div class="char-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="char-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Comunidade Acolhedora</h3>
+                        <p>População receptiva que mantém vivas as tradições culturais e valoriza a conexão entre campo e cidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <div class="container">
+                <h2>Linha do Tempo - São Jerônimo da Serra</h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <h3>1854</h3>
+                            <p>Chegada dos primeiros moradores, atraídos pela busca de ouro, formando um pequeno povoado às margens do Rio Tigre.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <h3>1867</h3>
+                            <p>O povoado recebe oficialmente o nome de São Jerônimo, em homenagem ao santo padroeiro da cidade.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <h3>1929</h3>
+                            <p>Criação oficial do Distrito de São Jerônimo, subordinado ao município de Tibagi.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <h3>1943</h3>
+                            <p>Emancipação política em 26 de dezembro, tornando-se município através da Lei Estadual nº 199.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <h3>Década de 1950</h3>
+                            <p>Período de forte crescimento econômico, impulsionado pela expansão da cafeicultura na região.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <h3>2000 em diante</h3>
+                            <p>Início da diversificação econômica, com foco no turismo ecológico, agricultura sustentável, pecuária e serviços.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="school" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Colégio Estadual Cívico-Militar João XXIII</h2>
+                    <p>Uma instituição comprometida com a educação de qualidade</p>
+                </div>
+                <div class="content reverse" data-aos="fade-up">
+                    <div class="image">
+                        <img src="JOÃO XIII02.jpg" alt="Fachada do Colégio Estadual Cívico-Militar João XXIII, com o prédio principal e área de convivência">
+                    </div>
+                    <div class="text">
+                        <p>O Colégio Estadual Cívico-Militar João XXIII, localizado na R. João Pedro Proença, 500, Centro, São Jerônimo da Serra - PR, é uma instituição de destaque na comunidade. Com o telefone (43) 3267-1382, o colégio desempenha um papel essencial na educação local, promovendo valores cívicos e acadêmicos.</p>
+                        <p>Fundado em 1965, o colégio atende aproximadamente 750 alunos dos ensinos fundamental e médio, com uma equipe pedagógica qualificada composta por 45 professores e 15 funcionários administrativos. Suas instalações incluem 15 salas de aula, laboratório de informática, biblioteca com mais de 5.000 volumes, quadra poliesportiva coberta e refeitório.</p>
+                        <p>Alinhado ao tema do Agrinho 2025, o colégio incentiva projetos que conectam o campo e a cidade, promovendo sustentabilidade e empreendedorismo entre os alunos. Atividades como feiras de ciências, horta escolar comunitária e projetos de robótica refletem o foco em tecnologia e inovação.</p>
+                        <a href="https://www.instagram.com/ccm.joaoxxiii/" target="_blank" rel="noopener">Siga o Instagram do colégio <i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="characteristics">
+                    <div class="char-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="char-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Excelência Acadêmica</h3>
+                        <p>Compromisso com um ensino de qualidade que prepara os alunos para os desafios do futuro.</p>
+                    </div>
+                    <div class="char-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="char-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Inovação Tecnológica</h3>
+                        <p>Projetos de robótica e informática que incentivam o pensamento crítico e a criatividade dos alunos.</p>
+                    </div>
+                    <div class="char-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="char-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Valores Cívicos</h3>
+                        <p>Formação integral baseada em disciplina, respeito e cidadania para o desenvolvimento pleno dos estudantes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="attractions" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Atrações Turísticas</h2>
+                    <p>Belezas naturais e culturais que encantam moradores e visitantes</p>
+                </div>
+                <div class="gallery">
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                        <img src="JOAONOGUEIRA.jpeg" alt="Cachoeira João Nogueira, com águas cristalinas caindo em uma piscina natural rodeada por vegetação">
+                        <div class="gallery-caption">Cachoeira João Nogueira</div>
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                        <img src="MORRO DO TAFF.jpg" alt="Paisagem da Serra do Taff ao pôr do sol, com colinas verdejantes e um céu alaranjado">
+                        <div class="gallery-caption">Serra do Taff</div>
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                        <img src="TIBAGI.jpeg" alt="Vista do Recanto Vale do Tibagi, com o rio serpenteando entre as montanhas e áreas de lazer">
+                        <div class="gallery-caption">Recanto Vale do Tibagi</div>
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                        <img src="RIOTIGRE.jpg" alt="Entrada do Distrito Espeleológico do Tigre, mostrando a abertura de uma das cavernas">
+                        <div class="gallery-caption">Rio Tigre</div>
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+                        <img src="IGREJAMATRIZ.jpeg" alt="Vista da Igreja Matriz de São Jerônimo, com sua arquitetura tradicional e praça central">
+                        <div class="gallery-caption">Igreja Matriz de São Jerônimo</div>
+                    </div>
+                    <div class="gallery-item" data-aos="fade-up" data-aos-delay="600">
+                        <img src="download.jpeg" alt="Plantação de café em São Jerônimo da Serra, com fileiras de pés de café e trabalhadores na colheita">
+                        <div class="gallery-caption">Plantações de Café</div>
+                    </div>
+                </div>
+                
+                <div class="content" data-aos="fade-up" style="margin-top: 60px;">
+                    <div class="text">
+                        <p>São Jerônimo da Serra é abençoada com uma rica diversidade de atrações naturais que encantam visitantes de todas as partes. A Cachoeira Queda do Tamando, com seus 20 metros de queda d'água, oferece uma experiência refrescante em meio à vegetação nativa. Já a Serra do Taff proporciona trilhas com vistas panorâmicas de tirar o fôlego.</p>
+                        <p>O Recanto Vale do Tibagi, às margens do imponente Rio Tibagi, é um local ideal para piqueniques, pescaria e contato com a natureza. O Distrito Espeleológico do Tigre abriga um conjunto notável de cavernas calcárias, algumas com pinturas rupestres que datam de milhares de anos.</p>
+                        <p>Além das belezas naturais, a cidade preserva um rico patrimônio histórico e cultural, com destaque para a Igreja Matriz de São Jerônimo, construída em 1914, e o centro histórico com casarões que contam a história da colonização da região.</p>
+                        <a href="https://www.turismo.pr.gov.br/Norte-Pioneiro" target="_blank" rel="noopener">Descubra mais sobre o turismo na região <i class="fas fa-map-marked-alt"></i></a>
+                    </div>
+                    <div class="image">
+                        <img src="SAOJERONIMO2.jpg" alt="Mapa turístico de São Jerônimo da Serra indicando os principais pontos de interesse e vias de acesso">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="agrinho" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Agrinho 2025: Festejando a Conexão Campo-Cidade</h2>
+                    <p>Celebrando a integração entre os ambientes rural e urbano</p>
+                </div>
+                <div class="content reverse" data-aos="fade-up">
+                    <div class="image">
+                        <img src="CAMPO.jpeg" alt="Evento do Programa Agrinho, com estudantes apresentando seus projetos sobre sustentabilidade e tecnologia rural">
+                    </div>
+                    <div class="text">
+                        <p>O tema do Agrinho 2025, "Festejando a conexão campo-cidade," promovido pelo Sistema FAEP/SENAR-PR, destaca a interdependência entre o meio rural e urbano. Em São Jerônimo da Serra, esse tema ressoa profundamente, com sua economia agrícola e iniciativas educacionais que promovem sustentabilidade e empreendedorismo.</p>
+                        <p>O programa incentiva inovações tecnológicas, como o uso de drones na agricultura de precisão, sistemas de irrigação inteligentes e aplicativos desenvolvidos por estudantes para monitoramento da produção. Além disso, promove práticas sustentáveis, como hortas comunitárias, compostagem, reciclagem e o uso de energias renováveis.</p>
+                        <p>O Colégio Estadual Cívico-Militar João XXIII participa ativamente, integrando esses conceitos nas aulas e projetos pedagógicos. Os alunos desenvolvem iniciativas que conectam o campo e a cidade, como o projeto "Do Campo à Mesa", que rastreia a origem dos alimentos, e o "Laboratório Verde", que estuda soluções para desafios agrícolas locais.</p>
+                        <a href="https://www.sistemafaep.org.br/agrinho" target="_blank" rel="noopener">Saiba mais sobre o Agrinho <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <div class="characteristics">
+                    <div class="char-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="char-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Sustentabilidade</h3>
+                        <p>Práticas que respeitam o meio ambiente e garantem a preservação dos recursos naturais para gerações futuras.</p>
+                    </div>
+                    <div class="char-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="char-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Inovação</h3>
+                        <p>Desenvolvimento de novas tecnologias e metodologias para aprimorar a produção agrícola e a qualidade de vida.</p>
+                    </div>
+                    <div class="char-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="char-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Integração</h3>
+                        <p>Fortalecimento dos laços entre campo e cidade, valorizando a contribuição de cada ambiente para o desenvolvimento comum.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contato e Localização</h2>
+                    <p>Estamos prontos para receber sua visita ou responder suas dúvidas</p>
+                </div>
+                <div class="contact-container" data-aos="fade-up">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-text">
+                                <h3>Endereço</h3>
+                                <p>Prefeitura Municipal de São Jerônimo da Serra</p>
+                                <p>Praça Coronel Deolindo, 151</p>
+                                <p>São Jerônimo da Serra - PR, 86.270-000</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="contact-text">
+                                <h3>Telefone</h3>
+                                <p>(43) 3772-2762</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-text">
+                                <h3>E-mail</h3>
+                                <p>contato@saojeronimodaserra.pr.gov.br</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="contact-text">
+                                <h3>Horário de Atendimento</h3>
+                                <p>
+                                    Segunda-feira à Sexta-feira: 07:45 às 11:45 e das 13:00 às 17:00 </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14667.083599953453!2d-50.74436538313731!3d-23.721458541977196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ec199fc3e6c8a7%3A0x1ce4dea1c1c5cd15!2sS%C3%A3o%20Jer%C3%B4nimo%20da%20Serra%2C%20PR%2C%2086270-000!5e0!3m2!1spt-BR!2sbr!4v1715780000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>São Jerônimo da Serra</h3>
+                    <p>Um município paranaense onde a conexão entre campo e cidade constrói um futuro sustentável e promissor para todos.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/prefeiturasaojeronimodaserra" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/prefeituradesaojeronimo/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UC-saojeronimodaserra" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Úteis</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://saojeronimodaserra.pr.gov.br/portal-da-transparencia/" target="_blank" rel="noopener">Portal da Transparência</a></li>
+                        <li><a href="https://saojeronimodaserra.pr.gov.br/servicos-online/" target="_blank" rel="noopener">Serviços Online</a></li>
+                        <li><a href="https://saojeronimodaserra.pr.gov.br/licitacoes/" target="_blank" rel="noopener">Licitações</a></li>
+                        <li><a href="https://saojeronimodaserra.pr.gov.br/turismo/" target="_blank" rel="noopener">Guia Turístico</a></li>
+                        <li><a href="https://saojeronimodaserra.pr.gov.br/noticias/" target="_blank" rel="noopener">Notícias</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Agrinho 2025</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.sistemafaep.org.br/agrinho/sobre" target="_blank" rel="noopener">Sobre o Programa</a></li>
+                        <li><a href="https://www.sistemafaep.org.br/agrinho/materiais" target="_blank" rel="noopener">Materiais Didáticos</a></li>
+                        <li><a href="https://www.sistemafaep.org.br/agrinho/concursos" target="_blank" rel="noopener">Concursos</a></li>
+                        <li><a href="https://www.sistemafaep.org.br/agrinho/calendario" target="_blank" rel="noopener">Calendário de Eventos</a></li>
+                        <li><a href="https://www.sistemafaep.org.br/agrinho/galeria" target="_blank" rel="noopener">Galeria de Projetos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 São Jerônimo da Serra. Todos os direitos reservados.</p>
+                <p>João Lucas de Souza Neves - Colégio Estadual Cívico-Militar João XXIII</p>
+                <p>Este site é acessível para todos os usuários.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Inicialização do AOS (Animate on Scroll)
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease',
+                once: true,
+                offset: 100
+            });
+
+            // Navegação responsiva
+            const burger = document.getElementById('burger');
+            const nav = document.getElementById('navLinks');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            const scrollDown = document.getElementById('scrollDown');
+
+            // Toggle de menu
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                
+                // Animação do burger
+                burger.classList.toggle('toggle');
+                
+                // Animação dos links
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+            });
+
+            // Fechar menu ao clicar em um link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    burger.classList.remove('toggle');
+                });
+            });
+
+            // Classe scrolled para a navbar
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                    backToTop.classList.add('show');
+                } else {
+                    navbar.classList.remove('scrolled');
+                    backToTop.classList.remove('show');
+                }
+            });
+
+            // Botão voltar ao topo
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Botão scroll down
+            scrollDown.addEventListener('click', () => {
+                const aboutSection = document.getElementById('about');
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Atualizar imagem de hero com base na hora do dia
+            const updateHeroImage = () => {
+                const hero = document.querySelector('.hero');
+                const hour = new Date().getHours();
+                
+                let timeOfDay;
+                if (hour >= 5 && hour < 12) {
+                    timeOfDay = 'morning';
+                } else if (hour >= 12 && hour < 18) {
+                    timeOfDay = 'afternoon';
+                } else {
+                    timeOfDay = 'evening';
+                }
+                
+                hero.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/800')`;
+            };
+            
+            updateHeroImage();
+            
+            // Adicionar classe toggle ao botão do menu
+            if (burger) {
+                burger.addEventListener('click', () => {
+                    const lines = burger.querySelectorAll('div');
+                    lines[0].classList.toggle('toggle1');
+                    lines[1].classList.toggle('toggle2');
+                    lines[2].classList.toggle('toggle3');
+                });
+            }
+            
+            // Animação no scroll para as seções
+            const sections = document.querySelectorAll('section');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (window.pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(li => {
+                    li.classList.remove('active');
+                    if (li.querySelector('a').getAttribute('href') === `#${current}`) {
+                        li.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Adicionar estilos CSS dinâmicos
+        (() => {
+            const style = document.createElement('style');
+            style.textContent = `
+                .burger div.toggle1 {
+                    transform: rotate(-45deg) translate(-5px, 6px);
+                }
+                .burger div.toggle2 {
+                    opacity: 0;
+                }
+                .burger div.toggle3 {
+                    transform: rotate(45deg) translate(-5px, -6px);
+                }
+                @keyframes navLinkFade {
+                    from {
+                        opacity: 0;
+                        transform: translateX(50px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        })();
+    </script>
+</body>
+</html>
